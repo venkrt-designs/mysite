@@ -12,7 +12,7 @@
     padding: 0px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    border-radius: 0px;
     z-index: 1;
     transform: rotate(calc(var(--random-rotate) * 1deg));
     transition: box-shadow 0.3s, transform 0.3s;
