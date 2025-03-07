@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venkrt - Creative Artist</title>
-    <!-- Link to Google Fonts for Doto font -->
-    <link href="https://fonts.googleapis.com/css2?family=Doto&display=swap" rel="stylesheet">
+    <title>Desktop Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Venkrt</h1>
-        <p>Creative Artist</p>
-    </header>
-
-    <nav>
-        <a href="#">Works</a>
-        <a href="#">Market</a>
-    </nav>
-
-   
-
-    <div class="content">
-       <img src="https://freepngimg.com/" alt="Album art">    </div>
-
-    <div id="custom-cursor"></div>
-
+    <div class="desktop">
+        <!-- Changed onclick to href links -->
+        <a href="about.html" class="folder" id="about-folder">
+            <div class="folder-icon"></div>
+            <div class="folder-name">ABOUT</div>
+        </a>
+        
+        <a href="portfolio.html" class="folder" id="portfolio-folder">
+            <div class="folder-icon"></div>
+            <div class="folder-name">PORTFOLIO</div>
+        </a>
+        
+        <a href="gumroad.html" class="folder" id="gumroad-folder">
+            <div class="folder-icon"></div>
+            <div class="folder-name">GUMROAD</div>
+        </a>
+    </div>
+    
+    <!-- Remove the windows and overlay since we're using separate pages -->
+    
     <script src="script.js"></script>
 </body>
 </html>

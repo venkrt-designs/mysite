@@ -1,0 +1,56 @@
+.photo-dump {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 70px); /* Full height minus header */
+    overflow: hidden;
+    /* Removed the background-color to allow the desktop background to show through */
+}
+
+.photo {
+    position: absolute;
+    cursor: url('https://img.icons8.com/skeuomorphism/32/hand-cursor.png'), grab;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    transform: rotate(calc(var(--random-rotate) * 1deg));
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.photo:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.photo:active {
+    cursor: url('https://img.icons8.com/skeuomorphism/32/hand-cursor.png'), grabbing;
+}
+
+.photo img {
+    display: block;
+    max-width: 400px;
+    max-height: 400px;
+    width: 100%;
+    height: auto;
+    pointer-events: none; /* This makes dragging work better */
+}
+
+/* Position each photo randomly */
+.photo:nth-child(1) { top: 10%; left: 15%; --random-rotate: -3; }
+.photo:nth-child(2) { top: 30%; left: 60%; --random-rotate: 5; }
+.photo:nth-child(3) { top: 50%; left: 25%; --random-rotate: -2; }
+.photo:nth-child(4) { top: 15%; left: 45%; --random-rotate: 4; }
+.photo:nth-child(5) { top: 60%; left: 70%; --random-rotate: -6; }
+.photo:nth-child(6) { top: 70%; left: 10%; --random-rotate: 3; }
+.photo:nth-child(7) { top: 40%; left: 80%; --random-rotate: -4; }
+.photo:nth-child(8) { top: 20%; left: 75%; --random-rotate: 2; }
+
+/* Add body styling to match index.html */
+body {
+    cursor: url('https://img.icons8.com/ios/20/filled-circle.png'), auto;
+    background-image: url('https://images.unsplash.com/photo-1543180896-d30121f77615?q=80&w=2054&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-color: #2c3e50;
+}

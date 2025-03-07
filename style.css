@@ -1,92 +1,116 @@
-/* General page styles */
-body {
+body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Doto', sans-serif; /* Apply the Doto font here */
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f5f5;
+    height: 100%;
+    font-family: Arial, sans-serif;
     overflow: hidden;
+    cursor: url('https://img.icons8.com/ios/20/filled-circle.png'), auto; /* Default custom cursor */
 }
 
-header {
+.desktop {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1543180896-d30121f77615?q=80&w=2054&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-color: #2c3e50;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.folder {
+    width: 100px;
+    height: 100px;
     text-align: center;
+    cursor: url('https://img.icons8.com/skeuomorphism/32/hand-cursor.png'), pointer;
+    transition: transform 0.2s;
+    position: absolute; /* Changed from float to absolute positioning */
+    text-decoration: none; /* Remove underline from links */
+    display: block; /* Make sure the anchor tag behaves like a block */
 }
 
-h1 {
-    color: #00ffaa;
+.folder:hover {
+    transform: scale(1.1);
 }
 
-p {
-    color: #1100ff;
+/* Individual folder positioning */
+#about-folder {
+    top: 50px;
+    left: 50px;
 }
 
-nav {
-    margin-top: 20px;
+#portfolio-folder {
+    top: 50px;
+    left: 200px;
 }
 
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #000000;
-    font-size: 16px;
-    font-weight: 700;
-    transition: color 0.3s;
+#gumroad-folder {
+    top: 200px;
+    left: 50px;
 }
 
-nav a:hover {
-    color: #0056b3;
+.folder-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.subcategories {
-    margin-top: 20px;
+/* Individual folder icons */
+#about-folder .folder-icon {
+    background-image: url('https://img.icons8.com/doodle/48/folder-invoices--v2.png');
+}
+
+#portfolio-folder .folder-icon {
+    background-image: url('https://img.icons8.com/doodle/48/folder-invoices--v2.png');
+}
+
+#gumroad-folder .folder-icon {
+    background-image: url('https://img.icons8.com/doodle/48/folder-invoices--v2.png');
+}
+
+.folder-name {
+    color: white;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     font-size: 14px;
-    color: #555;
 }
 
-.content {
-    margin-top: 40px;
+/* Add custom cursor to any clickable elements */
+a, button, [onclick], [role="button"] {
+    cursor: url('https://img.icons8.com/skeuomorphism/32/hand-cursor.png'), pointer;
 }
 
-.content img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
+/* Styles for the content pages */
+.page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
-/* Custom Cursor Styles */
-#custom-cursor {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #888888;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s;
-    mix-blend-mode: difference;
-    z-index: 9999;
+.page-header {
+    background-color: #f0b90b;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav a:hover ~ #custom-cursor {
-    width: 30px;
-    height: 30px;
+.page-title {
+    color: white;
+    font-weight: bold;
+    margin: 0;
 }
 
-.content img:hover ~ #custom-cursor {
-    width: 40px;
-    height: 40px;
-
-/* Custom Font Settings for Doto */
-.doto-custom-font {
-    font-family: "Doto", sans-serif; /* Font family set to Doto */
-    font-optical-sizing: auto;
-    font-weight: 400; /* Change this between 100 to 900 */
-    font-style: normal;
-    font-variation-settings:
-        "wght" 900; /* Adjust weight based on your need */
+.back-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: url('https://img.icons8.com/skeuomorphism/32/hand-cursor.png'), pointer;
 }
