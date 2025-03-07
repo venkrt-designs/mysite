@@ -1,6 +1,6 @@
 .photo-dump {
     position: relative;
-    width: 100%;
+    width: 50%;
     height: calc(100vh - 70px); /* Full height minus header */
     overflow: hidden;
     /* Removed the background-color to allow the desktop background to show through */
