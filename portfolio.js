@@ -2,29 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const photos = document.querySelectorAll('.photo');
 
     let isDragging = false;
+    let startX, startY, initialX, initialY, xOffset = 0, yOffset = 0;
     let currentPhoto = null;
-    let initialX, initialY, xOffset = 0, yOffset = 0;
-    let lastClickTime = 0;
-    const doubleClickDelay = 300; 
 
     photos.forEach(photo => {
         const randomX = Math.random() * 10 - 5;
         const randomY = Math.random() * 10 - 5;
         photo.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${photo.style.getPropertyValue('--random-rotate') || 0}deg)`;
 
-        // Start dragging
         photo.addEventListener('mousedown', dragStart);
         photo.addEventListener('touchstart', dragStart, { passive: false });
-
-        // Handle click navigation
-        photo.addEventListener('click', (e) => {
-            if (!isDragging) { // Prevent accidental navigation while dragging
-                const url = photo.getAttribute('data-url');
-                if (url) {
-                    window.open(url, '_blank'); // Open in a new tab
-                }
-            }
-        });
+        photo.addEventListener('click', handleClick);
     });
 
     document.addEventListener('mousemove', drag);
@@ -43,17 +31,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (e.type === "touchstart") {
             e.preventDefault();
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
             initialX = e.touches[0].clientX - xOffset;
             initialY = e.touches[0].clientY - yOffset;
         } else {
+            startX = e.clientX;
+            startY = e.clientY;
             initialX = e.clientX - xOffset;
             initialY = e.clientY - yOffset;
         }
-
-        const transform = window.getComputedStyle(currentPhoto).getPropertyValue('transform');
-        const matrix = new DOMMatrix(transform);
-        xOffset = matrix.m41;
-        yOffset = matrix.m42;
 
         document.addEventListener('mousemove', setDragging);
         document.addEventListener('touchmove', setDragging, { passive: false });
@@ -69,8 +56,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isDragging || !currentPhoto) return;
         e.preventDefault();
 
-        let currentX = e.type === "touchmove" ? e.touches[0].clientX - initialX : e.clientX - initialX;
-        let currentY = e.type === "touchmove" ? e.touches[0].clientY - initialY : e.clientY - initialY;
+        let currentX, currentY;
+        if (e.type === "touchmove") {
+            currentX = e.touches[0].clientX - initialX;
+            currentY = e.touches[0].clientY - initialY;
+        } else {
+            currentX = e.clientX - initialX;
+            currentY = e.clientY - initialY;
+        }
 
         xOffset = currentX;
         yOffset = currentY;
@@ -81,7 +74,22 @@ document.addEventListener('DOMContentLoaded', function() {
         currentPhoto.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${rotate}deg)`;
     }
 
-    function dragEnd() {
+    function dragEnd(e) {
+        if (!isDragging) {
+            handleClick(e);
+        }
         isDragging = false;
+    }
+
+    function handleClick(e) {
+        if (isDragging) return;
+
+        const photo = e.target.closest('.photo');
+        if (!photo) return;
+
+        const url = photo.getAttribute('data-url');
+        if (url) {
+            window.open(url, '_blank'); // Open the link in a new tab
+        }
     }
 });
