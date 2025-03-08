@@ -1,15 +1,13 @@
 /* General Styles */
 body {
     cursor: auto;
-    background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExODh2aWhsOTJtcmI5bjBoeXk0YjdodTh5bzJiZDMxanN5ZWd2YzhmeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/a692I53FP9XtvM4YCc/giphy.gif');
+    background: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExODh2aWhsOTJtcmI5bjBoeXk0YjdodTh5bzJiZDMxanN5ZWd2YzhmeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/a692I53FP9XtvM4YCc/giphy.gif') no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Keeps the background still when scrolling */
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
+
 
 /* Grid Layout */
 .photo-grid {
