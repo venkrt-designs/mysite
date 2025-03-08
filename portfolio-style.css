@@ -7,25 +7,7 @@ body {
     background-color: #2c3e50;
     margin: 0;
     padding: 0;
-}
-
-.page-header {
-    text-align: center;
-    padding: 20px;
-}
-
-.page-title {
-    font-size: 2rem;
-    color: white;
-}
-
-.back-btn {
-    text-decoration: none;
-    color: black;
-    background: #FF0000;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-weight: bold;
+    overflow-x: hidden; /* Prevents horizontal scrolling issues */
 }
 
 /* Grid Layout */
@@ -48,24 +30,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 200px; /* Set height for uniform square dimensions */
-    aspect-ratio: 1 / 1; /* Ensures images stay square */
-}
-
-.photo:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    height: 200px;
+    aspect-ratio: 1 / 1;
 }
 
 .photo img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image fully fills the container */
+    object-fit: cover;
     border-radius: 4px;
 }
 
-/* Lightbox for Full Image on Hover */
+/* Lightbox for Full Image */
 .lightbox {
     display: none;
     position: fixed;
@@ -77,10 +54,19 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    overflow: auto; /* Allows scrolling when the image is large */
 }
 
 .lightbox img {
     max-width: 90%;
     max-height: 90%;
     border-radius: 10px;
+    display: block;
+    margin: auto;
+}
+
+/* Fix Scrolling Issues */
+html, body {
+    touch-action: auto;
+    overflow-y: auto;
 }
