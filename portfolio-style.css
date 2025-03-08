@@ -1,9 +1,12 @@
+/* General Styles */
 body {
     cursor: auto;
     background-image: url('https://images.unsplash.com/photo-1543180896-d30121f77615?q=80&w=2054&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
     background-position: center;
     background-color: #2c3e50;
+    margin: 0;
+    padding: 0;
 }
 
 .page-header {
@@ -22,8 +25,10 @@ body {
     background: #FF0000;
     padding: 10px 15px;
     border-radius: 5px;
+    font-weight: bold;
 }
 
+/* Grid Layout */
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -33,8 +38,9 @@ body {
     margin: auto;
 }
 
+/* Image Box */
 .photo {
-    background-color: transparent; /* Removes the white background */
+    background-color: transparent;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     overflow: hidden;
@@ -42,6 +48,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 200px; /* Set height for uniform square dimensions */
+    aspect-ratio: 1 / 1; /* Ensures images stay square */
 }
 
 .photo:hover {
@@ -53,5 +61,26 @@ body {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures images fully cover the div */
+    object-fit: cover; /* Ensures the image fully fills the container */
+    border-radius: 4px;
+}
+
+/* Lightbox for Full Image on Hover */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
 }
