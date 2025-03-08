@@ -18,8 +18,8 @@ body {
 
 .back-btn {
     text-decoration: none;
-    color: white;
-    background: #3498db;
+    color: black;
+    background: #FF0000;
     padding: 10px 15px;
     border-radius: 5px;
 }
