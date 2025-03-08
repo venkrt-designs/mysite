@@ -3,27 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="portfolio-style.css">
 </head>
 <body>
+    <div class="page-header">
+        <h1 class="page-title">PORTFOLIO</h1>
+        <a href="index.html" class="back-btn">Back to Desktop</a>
+    </div>
+    
+    <div class="photo-grid">
+        <div class="photo" data-url="https://www.instagram.com/p/DCmhAG0y1xd/" data-full="the OG tamil word.jpg">
+            <img src="the OG tamil word.jpg" alt="Wakkali">
+        </div>
+        <div class="photo" data-url="https://example.com/project2" data-full="inki pinki pponki.png">
+            <img src="inki pinki pponki.png" alt="Project 2">
+        </div>
+        <div class="photo" data-url="https://example.com/project3" data-full="inspired by the.png">
+            <img src="inspired by the.png" alt="Project 3">
+        </div>
+        <div class="photo" data-url="https://example.com/project4" data-full="its only after we.png">
+            <img src="its only after we.png" alt="Project 4">
+        </div>
+        <div class="photo" data-url="https://example.com/project6" data-full="beauty queen.png">
+            <img src="beauty queen.png" alt="Project 6">
+        </div>
+        <div class="photo" data-url="https://example.com/project7" data-full="dont die wandering.png">
+            <img src="dont die wandering.png" alt="Project 7">
+        </div>
+        <div class="photo" data-url="https://example.com/project8" data-full="our-kind-of-drugs.png">
+            <img src="our-kind-of-drugs.png" alt="Project 8">
+        </div>
+    </div>
 
-    <header class="page-header">
-        <h1 class="page-title">Portfolio</h1>
-        <a href="index.html" class="back-btn">Back</a>
-    </header>
-
-    <section class="photo-grid">
-        <div class="photo"><img src="image1.jpg" alt="Artwork 1"></div>
-        <div class="photo"><img src="image2.jpg" alt="Artwork 2"></div>
-        <div class="photo"><img src="image3.jpg" alt="Artwork 3"></div>
-        <div class="photo"><img src="image4.jpg" alt="Artwork 4"></div>
-        <div class="photo"><img src="image5.jpg" alt="Artwork 5"></div>
-        <div class="photo"><img src="image6.jpg" alt="Artwork 6"></div>
-        <div class="photo"><img src="image7.jpg" alt="Artwork 7"></div>
-        <div class="photo"><img src="image8.jpg" alt="Artwork 8"></div>
-    </section>
-
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" src="" alt="Full Image">
+    </div>
+    
     <script src="portfolio.js"></script>
 </body>
 </html>
