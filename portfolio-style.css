@@ -3,7 +3,6 @@
     width: 50%;
     height: calc(100vh - 70px); /* Full height minus header */
     overflow: hidden;
-    /* Removed the background-color to allow the desktop background to show through */
 }
 
 .photo {
@@ -33,10 +32,10 @@
     max-height: 400px;
     width: 100%;
     height: auto;
-    pointer-events: none; /* This makes dragging work better */
+    pointer-events: auto; /* Allow clicking */
 }
 
-/* Position each photo randomly */
+/* Random positioning */
 .photo:nth-child(1) { top: 10%; left: 15%; --random-rotate: -3; }
 .photo:nth-child(2) { top: 30%; left: 60%; --random-rotate: 5; }
 .photo:nth-child(3) { top: 50%; left: 25%; --random-rotate: -2; }
@@ -46,7 +45,6 @@
 .photo:nth-child(7) { top: 40%; left: 80%; --random-rotate: -4; }
 .photo:nth-child(8) { top: 20%; left: 75%; --random-rotate: 2; }
 
-/* Add body styling to match index.html */
 body {
     cursor: url('https://img.icons8.com/ios/20/filled-circle.png'), auto;
     background-image: url('https://images.unsplash.com/photo-1543180896-d30121f77615?q=80&w=2054&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
@@ -54,3 +52,4 @@ body {
     background-position: center;
     background-color: #2c3e50;
 }
+
