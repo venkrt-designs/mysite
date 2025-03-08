@@ -34,11 +34,14 @@ body {
 }
 
 .photo {
-    background-color: white;
+    background-color: transparent; /* Removes the white background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .photo:hover {
