@@ -1,15 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const photos = document.querySelectorAll('.photo');
-
     let isDragging = false;
     let startX, startY, initialX, initialY, xOffset = 0, yOffset = 0;
     let currentPhoto = null;
+    let lastClickTime = 0;
+    const doubleClickDelay = 300; // ms delay for double click
 
     photos.forEach(photo => {
-        const randomX = Math.random() * 10 - 5;
-        const randomY = Math.random() * 10 - 5;
-        photo.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${photo.style.getPropertyValue('--random-rotate') || 0}deg)`;
-
         photo.addEventListener('mousedown', dragStart);
         photo.addEventListener('touchstart', dragStart, { passive: false });
         photo.addEventListener('click', handleClick);
@@ -68,10 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         xOffset = currentX;
         yOffset = currentY;
 
-        const computedStyle = getComputedStyle(currentPhoto);
-        const rotate = currentPhoto.style.getPropertyValue('--random-rotate') || computedStyle.getPropertyValue('--random-rotate') || 0;
-
-        currentPhoto.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${rotate}deg)`;
+        currentPhoto.style.transform = `translate(${currentX}px, ${currentY}px)`;
     }
 
     function dragEnd(e) {
@@ -87,9 +81,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const photo = e.target.closest('.photo');
         if (!photo) return;
 
-        const url = photo.getAttribute('data-url');
-        if (url) {
-            window.open(url, '_blank'); // Open the link in a new tab
+        const currentTime = new Date().getTime();
+        if (currentTime - lastClickTime < doubleClickDelay) {
+            // Double click detected - open link
+            const url = photo.getAttribute('data-url');
+            if (url) {
+                window.open(url, '_blank');
+            }
+            return;
         }
+        lastClickTime = currentTime;
     }
 });
