@@ -2,22 +2,26 @@
 .portfolio-desktop {
     position: relative;
     overflow: auto;
-    height: calc(100vh - 80px);
-    padding-top: 80px;
+    height: 100vh;
+    padding-top: 40px; /* Reduced from 80px */
 }
 
-.page-header {
+/* Minimal header without yellow bar */
+.header-minimal {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f0b90b;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    top: 10px;
+    right: 10px;
     z-index: 10;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: url('https://img.icons8.com/skeuomorphism/32/hand-cursor.png'), pointer;
 }
 
 /* Portfolio Items (Desktop Style) */
@@ -41,35 +45,26 @@
     transform: scale(1.1);
 }
 
-/* Folder icon styling - matching the main page style */
+/* Folder icon styling - now without overlay effects */
 .portfolio-item .folder-icon {
     width: 60px;
     height: 60px;
     margin: 0 auto;
-    background-color: #f8d7a4; /* Folder color from your screenshot */
-    border-radius: 5px 5px 0 0;
+    background-color: transparent; /* Removed the beige background */
     position: relative;
     overflow: hidden;
-    border: 2px solid #8b5a2b; /* Folder border color */
+    border: 2px solid #8b5a2b; /* Keep folder border */
+    border-radius: 5px;
 }
 
-.portfolio-item .folder-icon:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background-color: #8b5a2b; /* Tab color */
-    border-radius: 5px 5px 0 0;
-}
+/* Removed the :before pseudo-element that was creating the tab */
 
 .portfolio-item .folder-icon img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.7; /* Make it blend with the folder */
-    mix-blend-mode: multiply; /* Blend the image with folder color */
+    opacity: 1; /* Full opacity */
+    mix-blend-mode: normal; /* Normal blend mode */
 }
 
 .portfolio-item .folder-name {
@@ -108,15 +103,17 @@
     flex-direction: column;
 }
 
-.popup-header {
-    background-color: #f0b90b;
+/* Removed yellow background from header */
+.popup-header-minimal {
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #2c3e50; /* Match the popup background */
+    border-bottom: 1px solid #3d5168; /* Subtle border instead */
 }
 
-.popup-header h2 {
+.popup-header-minimal h2 {
     color: white;
     margin: 0;
     font-size: 20px;
