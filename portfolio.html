@@ -8,79 +8,37 @@
     <link rel="stylesheet" href="portfolio-style.css">
 </head>
 <body>
-    <div class="desktop portfolio-desktop">
-        <div class="header-minimal">
-            <a href="index.html" class="back-btn">X</a>
+    <div class="page-header">
+        <h1 class="page-title">Portfolio</h1>
+        <a href="index.html" class="back-btn">X</a>
+    </div>
+    
+    <div class="photo-grid">
+        <div class="photo" data-url="https://www.instagram.com/p/DCmhAG0y1xd/" data-full="the OG tamil word.jpg">
+            <img src="the OG tamil word.jpg" alt="Wakkali">
         </div>
-        
-        <div class="portfolio-items">
-            <div class="portfolio-item" data-title="Wakkali" data-description="The OG tamil word artwork exploring traditional calligraphy and modern design techniques.">
-                <div class="folder-icon">
-                    <img src="the OG tamil word.jpg" alt="Wakkali">
-                </div>
-                <div class="folder-name">WAKKALI</div>
-            </div>
-            
-            <div class="portfolio-item" data-title="Inki Pinki Ponki" data-description="A playful exploration of childhood rhymes transformed into visual art using vibrant colors and abstract shapes.">
-                <div class="folder-icon">
-                    <img src="inki pinki pponki.png" alt="Inki Pinki Ponki">
-                </div>
-                <div class="folder-name">INKI PINKI</div>
-            </div>
-            
-            <div class="portfolio-item" data-title="Inspired By" data-description="This piece draws inspiration from cultural icons and transforms them through a contemporary artistic lens.">
-                <div class="folder-icon">
-                    <img src="inspired by the.png" alt="Inspired By">
-                </div>
-                <div class="folder-name">INSPIRED</div>
-            </div>
-            
-            <div class="portfolio-item" data-title="After We" data-description="A contemplative piece examining the nature of existence and the passage of time through visual storytelling.">
-                <div class="folder-icon">
-                    <img src="its only after we.png" alt="After We">
-                </div>
-                <div class="folder-name">AFTER WE</div>
-            </div>
-            
-            <div class="portfolio-item" data-title="Beauty Queen" data-description="An exploration of beauty standards and cultural identity through mixed media and digital manipulation.">
-                <div class="folder-icon">
-                    <img src="beauty queen.png" alt="Beauty Queen">
-                </div>
-                <div class="folder-name">BEAUTY QUEEN</div>
-            </div>
-            
-            <div class="portfolio-item" data-title="Don't Die Wandering" data-description="A philosophical piece about the journey of life, incorporating text elements with abstract visuals to create narrative depth.">
-                <div class="folder-icon">
-                    <img src="dont die wandering.png" alt="Don't Die Wandering">
-                </div>
-                <div class="folder-name">WANDERING</div>
-            </div>
-            
-            <div class="portfolio-item" data-title="Our Kind of Drugs" data-description="A commentary on modern society's dependencies and addictions, presented through symbolic imagery and metaphor.">
-                <div class="folder-icon">
-                    <img src="our-kind-of-drugs.png" alt="Our Kind of Drugs">
-                </div>
-                <div class="folder-name">OUR DRUGS</div>
-            </div>
+        <div class="photo" data-url="https://example.com/project2" data-full="inki pinki pponki.png">
+            <img src="inki pinki pponki.png" alt="Project 2">
+        </div>
+        <div class="photo" data-url="https://example.com/project3" data-full="inspired by the.png">
+            <img src="inspired by the.png" alt="Project 3">
+        </div>
+        <div class="photo" data-url="https://example.com/project4" data-full="its only after we.png">
+            <img src="its only after we.png" alt="Project 4">
+        </div>
+        <div class="photo" data-url="https://example.com/project6" data-full="beauty queen.png">
+            <img src="beauty queen.png" alt="Project 6">
+        </div>
+        <div class="photo" data-url="https://example.com/project7" data-full="dont die wandering.png">
+            <img src="dont die wandering.png" alt="Project 7">
+        </div>
+        <div class="photo" data-url="https://example.com/project8" data-full="our-kind-of-drugs.png">
+            <img src="our-kind-of-drugs.png" alt="Project 8">
         </div>
     </div>
 
-    <!-- Popup Window -->
-    <div id="portfolio-popup" class="popup-overlay">
-        <div class="popup-window">
-            <div class="popup-header-minimal">
-                <h2 id="popup-title">Project Title</h2>
-                <span class="popup-close">X</span>
-            </div>
-            <div class="popup-content">
-                <div class="popup-image">
-                    <img id="popup-img" src="" alt="Project Image">
-                </div>
-                <div class="popup-info">
-                    <p id="popup-description">Project description goes here.</p>
-                </div>
-            </div>
-        </div>
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img" src="" alt="Full Image">
     </div>
     
     <script src="portfolio.js"></script>
