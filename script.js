@@ -7,3 +7,14 @@ function closeWindow(windowName) {
     document.getElementById(windowName + '-window').style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const windows = document.querySelectorAll('[id$="-window"]');
+    windows.forEach(window => {
+        window.addEventListener('touchend', function (event) {
+            if (event.target === window) {
+                closeWindow(window.id.replace('-window', ''));
+            }
+        });
+    });
+});
