@@ -4,7 +4,7 @@ body, html {
     height: 100%;
     font-family: Arial, sans-serif;
     overflow: hidden;
-    cursor: url('https://img.icons8.com/ios/20/filled-circle.png'), auto; /* Default custom cursor */
+    cursor: url('https://img.icons8.com/ios/20/filled-circle.png'), auto;
 }
 
 .desktop {
@@ -25,16 +25,15 @@ body, html {
     text-align: center;
     cursor: url('https://img.icons8.com/skeuomorphism/32/hand-cursor.png'), pointer;
     transition: transform 0.2s;
-    position: absolute; /* Changed from float to absolute positioning */
-    text-decoration: none; /* Remove underline from links */
-    display: block; /* Make sure the anchor tag behaves like a block */
+    position: absolute;
+    text-decoration: none;
+    display: block;
 }
 
 .folder:hover {
     transform: scale(1.1);
 }
 
-/* Individual folder positioning */
 #about-folder {
     top: 50px;
     left: 50px;
@@ -59,7 +58,6 @@ body, html {
     background-repeat: no-repeat;
 }
 
-/* Individual folder icons */
 #about-folder .folder-icon {
     background-image: url('https://img.icons8.com/doodle/48/folder-invoices--v2.png');
 }
@@ -79,12 +77,10 @@ body, html {
     font-size: 14px;
 }
 
-/* Add custom cursor to any clickable elements */
 a, button, [onclick], [role="button"] {
     cursor: url('https://img.icons8.com/skeuomorphism/32/hand-cursor.png'), pointer;
 }
 
-/* Styles for the content pages */
 .page-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -113,4 +109,110 @@ a, button, [onclick], [role="button"] {
     border-radius: 5px;
     text-decoration: none;
     cursor: url('https://img.icons8.com/skeuomorphism/32/hand-cursor.png'), pointer;
+}
+
+/* Responsive and Adaptive Styles */
+@media (max-width: 1024px) {
+    .desktop {
+        padding: 15px;
+    }
+
+    .folder {
+        width: 90px;
+        height: 90px;
+    }
+
+    .folder-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .folder-name {
+        font-size: 12px;
+    }
+
+    #about-folder {
+        top: 30px;
+        left: 30px;
+    }
+
+    #portfolio-folder {
+        top: 30px;
+        left: 150px;
+    }
+
+    #gumroad-folder {
+        top: 150px;
+        left: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .desktop {
+        padding: 10px;
+    }
+
+    .folder {
+        width: 80px;
+        height: 80px;
+    }
+
+    .folder-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .folder-name {
+        font-size: 11px;
+    }
+
+    #about-folder {
+        top: 20px;
+        left: 20px;
+    }
+
+    #portfolio-folder {
+        top: 20px;
+        left: 120px;
+    }
+
+    #gumroad-folder {
+        top: 120px;
+        left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .desktop {
+        padding: 5px;
+    }
+
+    .folder {
+        width: 70px;
+        height: 70px;
+    }
+
+    .folder-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .folder-name {
+        font-size: 10px;
+    }
+
+    #about-folder {
+        top: 10px;
+        left: 10px;
+    }
+
+    #portfolio-folder {
+        top: 10px;
+        left: 90px;
+    }
+
+    #gumroad-folder {
+        top: 90px;
+        left: 10px;
+    }
 }
